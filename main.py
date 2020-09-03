@@ -20,3 +20,4 @@ ev3 = EV3Brick()
 ev3.speaker.beep()
 
 #This is a test from your fellow Student FRED
+#this is a test from Rikk
