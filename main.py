@@ -14,10 +14,20 @@ from pybricks.media.ev3dev import SoundFile, ImageFile
 
 # Create your objects here.
 ev3 = EV3Brick()
+Left = Motor(Port.B)
+Right = Motor(Port.C)
+Drive = DriveBase(Left,Right, wheel_diameter=55.5, axel_track=148)
 
-
-# Write your program here.
+# Go forward and backwards for one meter.
+robot.straight(1000)
 ev3.speaker.beep()
 
-#This is a test from your fellow Student FRED
-#this is a test from Rikk
+robot.straight(-1000)
+ev3.speaker.beep()
+
+# Turn clockwise by 360 degrees and back again.
+robot.turn(360)
+ev3.speaker.beep()
+
+robot.turn(-360)
+ev3.speaker.beep()
