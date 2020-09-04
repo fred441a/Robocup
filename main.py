@@ -14,10 +14,15 @@ from pybricks.media.ev3dev import SoundFile, ImageFile
 
 # Create your objects here.
 ev3 = EV3Brick()
-
+Wheel_motors = Motor(Port.B,Port.C)
+color_sensor = ColorSensor(Port.S3)
 
 # Write your program here.
 ev3.speaker.beep()
-
+Motors.runtime(180,3000,then=Stop,wait=True)
+m.run_forever(speed_sp=900)
+m.stop(stop_action="hold")
 #This is a test from your fellow Student FRED
-#this is a test from Rikk
+
+# Connect an EV3 color sensor to any sensor port.
+cl = ColorSensor()
