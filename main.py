@@ -16,17 +16,18 @@ from pybricks.parameters import Port
 from pybricks.tools import wait
 from pybricks.robotics import DriveBase
 from pybricks.hubs import EV3Brick
-from pybricks.parameters import Button
+from pybricks.parameters import Button, Direction
+from Ligeud import Kør_Lige_ud
 
 # Initialize the motors.
-left_motor = Motor(Port.B)
-right_motor = Motor(Port.C)
+left_motor = Motor(Port.B, positive_direction=Direction.COUNTERCLOCKWISE)
+right_motor = Motor(Port.C, positive_direction=Direction.COUNTERCLOCKWISE)
 
 # Initialize the color sensor.
 line_sensor = ColorSensor(Port.S1)
 
 # Initialize the drive base.
-robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=104)
+robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=191)
 
 #Initialize the ev3 block
 ev3 = EV3Brick()
@@ -34,9 +35,8 @@ ev3 = EV3Brick()
 # Calculate the light threshold. Choose values based on your measurements.
 
 
-BLACK = 12
-WHITE = 20
-threshold = (BLACK + WHITE) / 2
+BLACK = None
+WHITE = None
 
 # Set the drive speed at 100 millimeters per second.
 DRIVE_SPEED = 100
@@ -56,17 +56,10 @@ while True:
         BLACK = line_sensor.reflection()
         ev3.speaker.beep()
     if Button.UP in ev3.buttons.pressed():
-        White = line_sensor.reflection()
+        WHITE = line_sensor.reflection()
         ev3.speaker.beep()
-    threshold = (BLACK + WHITE) / 2
-    # Calculate the deviation from the threshold.
-    deviation = line_sensor.reflection() - threshold
+    if BLACK != None and WHITE != None:
+        threshold = (BLACK + WHITE) / 2
+        Kør_Lige_ud(robot,line_sensor,threshold)
+        break
 
-    # Calculate the turn rate.
-    turn_rate = PROPORTIONAL_GAIN * deviation
-
-    # Set the drive base speed and turn rate.
-    robot.drive(DRIVE_SPEED, turn_rate)
-
-    # You can wait for a short time or do other things in this loop.
-    wait(10)
