@@ -38,16 +38,7 @@ ev3 = EV3Brick()
 BLACK = None
 WHITE = None
 
-# Set the drive speed at 100 millimeters per second.
-DRIVE_SPEED = 100
 
-# Set the gain of the proportional line controller. This means that for every
-# percentage point of light deviating from the threshold, we set the turn
-# rate of the drivebase to 1.2 degrees per second.
-
-# For example, if the light value deviates from the threshold by 10, the robot
-# steers at 10*1.2 = 12 degrees per second.
-PROPORTIONAL_GAIN = 1.2
 
 # Start following the line endlessly.
 while True:
