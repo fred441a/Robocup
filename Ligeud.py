@@ -26,5 +26,10 @@ def Kør_Lige_ud(drivebase,linesensor,threshold):
 
         # You can wait for a short time or do other things in this loop.
         if linesensor =< 9:
+            Drej_tilhøjre()
             break
         wait(10)
+
+def Drej_tilhøjre():
+DriveBase.turn(45)
+DriveBase.straight(distance(200))
