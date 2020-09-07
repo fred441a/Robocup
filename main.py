@@ -53,4 +53,8 @@ while True:
         threshold = (BLACK + WHITE) / 2
         Kør_Lige_ud(robot,line_sensor,threshold)
         break
+        turn(turn_rate(45))
+        straight(distance(20))
+        Kør_Lige_ud(robot,line_sensor,threshold)
+
 
