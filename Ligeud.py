@@ -5,7 +5,7 @@ from pybricks.robotics import DriveBase
 
 def Kør_Lige_ud(drivebase,linesensor,threshold):
         # Set the drive speed at 100 millimeters per second.
-    DRIVE_SPEED = 200
+    DRIVE_SPEED = 100
 
     # Set the gain of the proportional line controller. This means that for every
     # percentage point of light deviating from the threshold, we set the turn
@@ -25,6 +25,7 @@ def Kør_Lige_ud(drivebase,linesensor,threshold):
         drivebase.drive(DRIVE_SPEED, turn_rate)
 
         # You can wait for a short time or do other things in this loop.
-        if linesensor =< 9:
+        if linesensor.reflection() < 15:
+            print("STOP")
             break
         wait(10)

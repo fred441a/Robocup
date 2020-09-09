@@ -22,6 +22,7 @@ from Ligeud import Kør_Lige_ud
 # Initialize the motors.
 left_motor = Motor(Port.B, positive_direction=Direction.COUNTERCLOCKWISE)
 right_motor = Motor(Port.C, positive_direction=Direction.COUNTERCLOCKWISE)
+Arm_Motor = Motor(Port.D)
 
 # Initialize the color sensor.
 line_sensor = ColorSensor(Port.S1)
@@ -37,7 +38,7 @@ ev3 = EV3Brick()
 
 BLACK = None
 WHITE = None
-
+openclose = True
 
 
 # Start following the line endlessly.
@@ -49,6 +50,17 @@ while True:
     if Button.UP in ev3.buttons.pressed():
         WHITE = line_sensor.reflection()
         ev3.speaker.beep()
+    if Button.LEFT in ev3.buttons.pressed():
+        if openclose :
+            Arm_Motor.run(200)
+            openclose = False
+        else:
+            Arm_Motor.run(-200)
+            openclose = True
+
+
+    if Button.RIGHT in ev3.buttons.pressed():
+        Arm_Motor.stop()
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
         Kør_Lige_ud(robot,line_sensor,threshold)
