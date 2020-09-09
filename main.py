@@ -65,4 +65,6 @@ while True:
         threshold = (BLACK + WHITE) / 2
         Kør_Lige_ud(robot,line_sensor,threshold)
         break
+        
+
 

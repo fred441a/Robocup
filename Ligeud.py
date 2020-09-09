@@ -29,3 +29,7 @@ def Kør_Lige_ud(drivebase,linesensor,threshold):
             print("STOP")
             break
         wait(10)
+
+def Drej_tilhøjre():
+DriveBase.turn(45)
+DriveBase.straight(distance(200))
