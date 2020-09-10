@@ -1,5 +1,3 @@
-
-
 def Skift_linje_Højre(DriveBase,sensor,grey):
     DriveBase.turn(60)
     DriveBase.straight(200)
@@ -18,5 +16,5 @@ def Skift_linje_Venstre(DriveBase,sensor,grey):
         print(sensor.reflection())
         DriveBase.drive(200,0)
     DriveBase.stop()
-    DriveBase.straight(200)
+    #DriveBase.straight(200)
     DriveBase.turn(50)

@@ -19,6 +19,8 @@ from pybricks.hubs import EV3Brick
 from pybricks.parameters import Button, Direction
 from Ligeud import Kør_Lige_ud
 from SkiftBane import Skift_linje_Højre , Skift_linje_Venstre
+from PickupFlask import PickupFlask , PutDownFlask
+from FireGrå import FireGrå
 
 
 # Initialize the motors.
@@ -44,7 +46,6 @@ openclose = True
 
 
 # Start following the line endlessly.
-Arm_Motor
 while True:
     print(Arm_Motor.angle())
     if Button.DOWN in ev3.buttons.pressed():
@@ -54,21 +55,23 @@ while True:
         WHITE = line_sensor.reflection()
         ev3.speaker.beep()
     if Button.LEFT in ev3.buttons.pressed():
-        if openclose :
-            Arm_Motor.run(200)
+        if openclose:
+            Arm_Motor.run(100)
             openclose = False
         else:
-            Arm_Motor.run(-200)
+            Arm_Motor.run(-100)
             openclose = True
     if Button.RIGHT in ev3.buttons.pressed():
         Arm_Motor.stop()
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
-        Kør_Lige_ud(robot,line_sensor,threshold,-2)
-        Skift_linje_Højre(robot,line_sensor,BLACK)
-        Kør_Lige_ud(robot,line_sensor,threshold,2)
-        Skift_linje_Venstre(robot,line_sensor,BLACK)
-        Kør_Lige_ud(robot,line_sensor,threshold,-2)
+        FireGrå(robot,line_sensor,BLACK,WHITE)
+
+        #Kør_Lige_ud(robot,line_sensor,threshold,-2)
+        #Skift_linje_Højre(robot,line_sensor,BLACK)
+        #Kør_Lige_ud(robot,line_sensor,threshold,2)
+        #Skift_linje_Venstre(robot,line_sensor,BLACK)
+        #Kør_Lige_ud(robot,line_sensor,threshold,-2)
         break
         
 
