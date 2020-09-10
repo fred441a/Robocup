@@ -49,22 +49,7 @@ WHITE = None
 # Start following the line endlessly.
 
 while True:
-    if Button.DOWN in ev3.buttons.pressed():
-        BLACK = line_sensor.reflection()
-        ev3.speaker.beep()
-    if Button.UP in ev3.buttons.pressed():
-        WHITE = line_sensor.reflection()
-        ev3.speaker.beep()
-    if BLACK != None and WHITE != None:
-        threshold = (BLACK + WHITE) / 2
-        Kør_Lige_ud(robot,line_sensor,threshold,-2)
-        Skift_linje_Højre(robot,line_sensor,BLACK)
-        Kør_Lige_ud(robot,line_sensor,threshold,2)
-        Skift_linje_Venstre(robot,line_sensor,BLACK)
-        Kør_Lige_ud(robot,line_sensor,threshold,-2)
-        dreje_mod_flaske(robot,line_sensor,BLACK)
+        Kør_hen_til_flaske(robot,ultra_sensor)
+        løfte_flaske(robot,ultra_sensor)
         
         break
-        
-
-
