@@ -4,11 +4,14 @@ def dreje_mod_flaske(drivebase):
     drivebase.turn(90)
 
 #den kører frem og får flasken ind i grebet. Vi har målt at der er 8 cm fra sensor til flasken
-def Kør_hen_til_flaske(drivebase,ultra_sensor):
-    while ultra_sensor.distance() < 80:
-        DriveBase.drive(200)
-    DriveBase.stop()
-    print("STOP")
+def Kør_hen_til_flaske(DriveBase,ultra_sensor):
+    while True:
+        if ultra_sensor.distance() < 93:
+            DriveBase.stop()
+            print("afstand fundet")
+            break
+        else:
+            DriveBase.drive(50,0)
 
 #set openclose til tru hvis den skal åbne og false hvis den skal lukke
 def løfte_flaske(Arm_Motor, openclose):
@@ -16,7 +19,7 @@ def løfte_flaske(Arm_Motor, openclose):
         print(Arm_Motor.angle())
         Arm_Motor.run_target(200,1300, then=Stop.HOLD, wait=True)
     else:
-        Arm_Motor.run_target(200,-1300, then=Stop.HOLD, wait=True)
+        Arm_Motor.run_target(200,0, then=Stop.HOLD, wait=True)
    
 
 
