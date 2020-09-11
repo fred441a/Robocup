@@ -10,11 +10,11 @@ from Ligeud import Kør_Lige_ud
 from SkiftBane import Skift_linje_Højre , Skift_linje_Venstre
 from PickupFlask import PickupFlask , PutDownFlask
 from FireGrå import FireGrå
-from HenteFlaske import dreje_mod_flaske
+from HenteFlaske import dreje_mod_flaske , Kør_hen_til_flaske , løfte_flaske
 
 # Initialize the motors.
-left_motor = Motor(Port.B, positive_direction=Direction.COUNTERCLOCKWISE, gears=[26,32])
-right_motor = Motor(Port.C, positive_direction=Direction.COUNTERCLOCKWISE, gears=[26,32])
+left_motor = Motor(Port.B, positive_direction=Direction.COUNTERCLOCKWISE, gears=[12,20])
+right_motor = Motor(Port.C, positive_direction=Direction.COUNTERCLOCKWISE, gears=[12,20])
 Arm_Motor = Motor(Port.D)
 
 # Initialize the color sensor.
@@ -35,6 +35,15 @@ ev3 = EV3Brick()
 BLACK = None
 WHITE = None
 
+#Løser det første segment hvor robotten skal skifte linje 2 gange
+def FørsteSegment(){
+        Kør_Lige_ud(robot,line_sensor,threshold,-2)
+        Skift_linje_Højre(robot,line_sensor,BLACK)
+        Kør_Lige_ud(robot,line_sensor,threshold,2)
+        Skift_linje_Venstre(robot,line_sensor,BLACK)
+        Kør_Lige_ud(robot,line_sensor,threshold,-2)
+        dreje_mod_flaske(robot,line_sensor,BLACK)
+}
 
 
 # Start following the line endlessly.
@@ -48,15 +57,7 @@ while True:
         ev3.speaker.beep()
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
-        dreje_mod_flaske(robot)
-        Kør_hen_til_flaske(robot, ultra_sensor)
-        løfte_flaske(Arm_Motor)
-        #Kør_Lige_ud(robot,line_sensor,threshold,-2)
-        #Skift_linje_Højre(robot,line_sensor,BLACK)
-        #Kør_Lige_ud(robot,line_sensor,threshold,2)
-        #Skift_linje_Venstre(robot,line_sensor,BLACK)
-        #Kør_Lige_ud(robot,line_sensor,threshold,-2)
-        #dreje_mod_flaske(robot,line_sensor,BLACK)
+
         
         break
         
