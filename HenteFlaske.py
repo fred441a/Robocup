@@ -17,6 +17,9 @@ def løfte_flaske(Arm_Motor, openclose):
         Arm_Motor.run_target(200,1300, then=Stop.HOLD, wait=True)
     else:
         Arm_Motor.run_target(200,-1300, then=Stop.HOLD, wait=True)
+
+def sænk_flaske(Arm_Motor, openclose):
+    
    
 
 
