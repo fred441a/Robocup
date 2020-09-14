@@ -42,8 +42,6 @@ def FørsteSegment():
         Kør_Lige_ud(robot,line_sensor,threshold,2)
         Skift_linje_Venstre(robot,line_sensor,BLACK)
         Kør_Lige_ud(robot,line_sensor,threshold,-3)
-        dreje_mod_flaske(robot,line_sensor,BLACK)
-
 
 
 # Start following the line endlessly.
