@@ -1,6 +1,6 @@
 from Ligeud import Kør_Lige_ud
 
-int lineDist = 200
+lineDist = 200
 
 def FireGråSekment(DriveBase, sensor, grey, white)
     robot.straight(500)

@@ -9,10 +9,8 @@ from pybricks.parameters import Button, Direction
 
 #Vores Libraries
 from Ligeud import Kør_Lige_ud
-from SkiftBane import Skift_linje_Højre , Skift_linje_Venstre
-from PickupFlask import PickupFlask , PutDownFlask
-from FireGrå import FireGrå 
-from HenteFlaske import dreje_mod_flaske , Kør_hen_til_flaske , løfte_flaske
+from SkiftBane import Skift_linje_Højre , Skift_linje_Venstre, FørsteSegment
+from Trekant import indtil_hurdle, første_væg, væk_igen, ret_ind
 
 # Initialize the motors.
 left_motor = Motor(Port.B, positive_direction=Direction.COUNTERCLOCKWISE, gears=[12,20])
@@ -52,7 +50,11 @@ while True:
         ev3.speaker.beep()
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
-        FørsteSegment(robot,line_sensor,threshold,BLACK)
+        Kør_Lige_ud(robot,line_sensor,threshold,2)
+        indtil_hurdle(robot)
+        første_væg(robot,ultra_sensor)
+        ret_ind(robot)
+        Kør_Lige_ud(robot,line_sensor,threshold,-2)
         break
         
 
