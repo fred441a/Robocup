@@ -10,6 +10,23 @@ from pybricks.parameters import Button, Direction
 #Vores Libraries
 from Ligeud import Kør_Lige_ud
 
+# Initialize the motors.
+left_motor = Motor(Port.B, positive_direction=Direction.COUNTERCLOCKWISE, gears=[12,20])
+right_motor = Motor(Port.C, positive_direction=Direction.COUNTERCLOCKWISE, gears=[12,20])
+Arm_Motor = Motor(Port.D)
+
+# Initialize the color sensor.
+line_sensor = ColorSensor(Port.S1)
+
+#intialize the ultrasonic sensor
+ultra_sensor =  UltrasonicSensor(Port.S2)
+
+# Initialize the drive base.
+robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=191)
+
+#Initialize the ev3 block
+ev3 = EV3Brick()
+
 # follow line until black cross line (use def kør_lige_ud)
 while True:
     if Button.DOWN in ev3.buttons.pressed():
