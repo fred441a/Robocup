@@ -53,11 +53,6 @@ while True:
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
         FørsteSegment(robot,line_sensor,threshold,BLACK)
-        dreje_mod_flaske(robot)
-        Kør_hen_til_flaske(robot,ultra_sensor)
-        løfte_flaske(Arm_Motor, True)
-        robot.straight(200)
-        løfte_flaske(Arm_Motor,False)
         break
         
 
