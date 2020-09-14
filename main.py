@@ -11,7 +11,7 @@ from pybricks.parameters import Button, Direction
 from Ligeud import Kør_Lige_ud
 from SkiftBane import Skift_linje_Højre , Skift_linje_Venstre
 from PickupFlask import PickupFlask , PutDownFlask
-from FireGrå import FireGrå
+from FireGrå import FireGrå 
 from HenteFlaske import dreje_mod_flaske , Kør_hen_til_flaske , løfte_flaske
 
 # Initialize the motors.
@@ -60,5 +60,4 @@ while True:
         løfte_flaske(Arm_Motor,False)
         break
         
-
 
