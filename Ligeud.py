@@ -25,6 +25,5 @@ def Kør_Lige_ud(drivebase,linesensor,threshold, PROPORTIONAL_GAIN):
 
         # You can wait for a short time or do other things in this loop.
         if linesensor.reflection() < 15:
-            print("STOP")
             break
         wait(10)

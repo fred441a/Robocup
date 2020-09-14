@@ -17,3 +17,10 @@ def Skift_linje_Venstre(DriveBase,sensor,grey):
         DriveBase.drive(200,0)
     DriveBase.stop()
     DriveBase.turn(45)
+
+def FørsteSegment(robot, line_sensor,threshold,BLACK):
+        Kør_Lige_ud(robot,line_sensor,threshold,-2)
+        Skift_linje_Højre(robot,line_sensor,BLACK)
+        Kør_Lige_ud(robot,line_sensor,threshold,2)
+        Skift_linje_Venstre(robot,line_sensor,BLACK)
+        Kør_Lige_ud(robot,line_sensor,threshold,-3)
