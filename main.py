@@ -36,14 +36,12 @@ BLACK = None
 WHITE = None
 
 #Løser det første segment hvor robotten skal skifte linje 2 gange
-def FørsteSegment(){
+def FørsteSegment():
         Kør_Lige_ud(robot,line_sensor,threshold,-2)
         Skift_linje_Højre(robot,line_sensor,BLACK)
         Kør_Lige_ud(robot,line_sensor,threshold,2)
         Skift_linje_Venstre(robot,line_sensor,BLACK)
-        Kør_Lige_ud(robot,line_sensor,threshold,-2)
-        dreje_mod_flaske(robot,line_sensor,BLACK)
-}
+        Kør_Lige_ud(robot,line_sensor,threshold,-3)
 
 
 # Start following the line endlessly.
@@ -57,8 +55,12 @@ while True:
         ev3.speaker.beep()
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
-
-        
+        FørsteSegment()
+        dreje_mod_flaske(robot)
+        Kør_hen_til_flaske(robot,ultra_sensor)
+        løfte_flaske(Arm_Motor, True)
+        robot.straight(200)
+        løfte_flaske(Arm_Motor,False)
         break
         
 
