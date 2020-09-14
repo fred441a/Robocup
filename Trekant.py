@@ -1,4 +1,14 @@
 # follow line until black cross line (use def kør_lige_ud)
+while True:
+    if Button.DOWN in ev3.buttons.pressed():
+        BLACK = line_sensor.reflection()
+        ev3.speaker.beep()
+    if Button.UP in ev3.buttons.pressed():
+        WHITE = line_sensor.reflection()
+        ev3.speaker.beep()
+    if BLACK != None and WHITE != None:
+        threshold = (BLACK + WHITE) / 2
+        Kør_Lige_ud(robot,line_sensor,threshold,-2)
 
 # first turn
 def indtil_hurdle():
