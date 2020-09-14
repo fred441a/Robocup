@@ -9,6 +9,10 @@ from pybricks.parameters import Button, Direction
 
 #Vores Libraries
 from Ligeud import Kør_Lige_ud
+from SkiftBane import Skift_linje_Højre , Skift_linje_Venstre
+from PickupFlask import PickupFlask , PutDownFlask
+from FireGrå import FireGrå
+from HenteFlaske import dreje_mod_flaske , Kør_hen_til_flaske , løfte_flaske
 
 # Initialize the motors.
 left_motor = Motor(Port.B, positive_direction=Direction.COUNTERCLOCKWISE, gears=[12,20])
@@ -26,6 +30,11 @@ robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=191)
 
 #Initialize the ev3 block
 ev3 = EV3Brick()
+
+# Calculate the light threshold. Choose values based on your measurements.
+
+BLACK = None
+WHITE = None
 
 # follow line until black cross line (use def kør_lige_ud)
 while True:
