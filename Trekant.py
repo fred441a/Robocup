@@ -1,3 +1,15 @@
+#!/usr/bin/env pybricks-micropython
+
+from pybricks.ev3devices import Motor, ColorSensor,  UltrasonicSensor
+from pybricks.parameters import Port
+from pybricks.tools import wait
+from pybricks.robotics import DriveBase
+from pybricks.hubs import EV3Brick
+from pybricks.parameters import Button, Direction
+
+#Vores Libraries
+from Ligeud import Kør_Lige_ud
+
 # follow line until black cross line (use def kør_lige_ud)
 while True:
     if Button.DOWN in ev3.buttons.pressed():
