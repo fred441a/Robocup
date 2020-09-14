@@ -6,6 +6,8 @@ from pybricks.tools import wait
 from pybricks.robotics import DriveBase
 from pybricks.hubs import EV3Brick
 from pybricks.parameters import Button, Direction
+
+#Vores Libraries
 from Ligeud import Kør_Lige_ud
 from SkiftBane import Skift_linje_Højre , Skift_linje_Venstre
 from PickupFlask import PickupFlask , PutDownFlask
@@ -36,12 +38,7 @@ BLACK = None
 WHITE = None
 
 #Løser det første segment hvor robotten skal skifte linje 2 gange
-def FørsteSegment():
-        Kør_Lige_ud(robot,line_sensor,threshold,-2)
-        Skift_linje_Højre(robot,line_sensor,BLACK)
-        Kør_Lige_ud(robot,line_sensor,threshold,2)
-        Skift_linje_Venstre(robot,line_sensor,BLACK)
-        Kør_Lige_ud(robot,line_sensor,threshold,-3)
+
 
 
 # Start following the line endlessly.
@@ -55,7 +52,7 @@ while True:
         ev3.speaker.beep()
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
-        FørsteSegment()
+        FørsteSegment(robot,line_sensor,threshold,BLACK)
         dreje_mod_flaske(robot)
         Kør_hen_til_flaske(robot,ultra_sensor)
         løfte_flaske(Arm_Motor, True)

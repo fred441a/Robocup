@@ -4,7 +4,7 @@ from pybricks.tools import wait
 from pybricks.robotics import DriveBase
 
 def Kør_Lige_ud(drivebase,linesensor,threshold, PROPORTIONAL_GAIN):
-        # Set the drive speed at 100 millimeters per second.
+        # Set the drive speed at 200 millimeters per second.
     DRIVE_SPEED = 200
 
     # Set the gain of the proportional line controller. This means that for every
@@ -25,6 +25,5 @@ def Kør_Lige_ud(drivebase,linesensor,threshold, PROPORTIONAL_GAIN):
 
         # You can wait for a short time or do other things in this loop.
         if linesensor.reflection() < 15:
-            print("STOP")
             break
         wait(10)
