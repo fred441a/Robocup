@@ -13,6 +13,7 @@ def Kør_Lige_ud(drivebase,linesensor,threshold, PROPORTIONAL_GAIN):
 
     # For example, if the light value deviates from the threshold by 10, the robot
     # steers at 10*1.2 = 12 degrees per second.
+    
     while True:
         # Calculate the deviation from the threshold.
         deviation = linesensor.reflection() - threshold
