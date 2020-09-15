@@ -25,6 +25,8 @@ line_sensor = ColorSensor(Port.S1)
 #intialize the ultrasonic sensor
 ultra_sensor =  UltrasonicSensor(Port.S2)
 
+
+
 # Initialize the drive base.
 robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=191)
 
