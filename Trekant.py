@@ -1,4 +1,4 @@
-from pybricks.tools import wait
+from pybricks.tools import Wait
 
 # first turn
 def indtil_hurdle(DriveBase):

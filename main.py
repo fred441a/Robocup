@@ -2,14 +2,14 @@
 
 from pybricks.ev3devices import Motor, ColorSensor,  UltrasonicSensor
 from pybricks.parameters import Port
-from pybricks.tools import wait
+from pybricks.tools import Wait
 from pybricks.robotics import DriveBase
 from pybricks.hubs import EV3Brick
 from pybricks.parameters import Button, Direction
 
 #Vores Libraries
 from Ligeud import Kør_Lige_ud
-from SkiftBane import Skift_linje_Højre , Skift_linje_Venstre, FørsteSegment
+from SkiftBane import Skift_linje_Højre, Skift_linje_Venstre, FørsteSegment
 from Trekant import indtil_hurdle, første_væg, væk_igen, ret_ind
 from RundtomFlaske import Rundt_Om_Flaske, SjetteSegment, OttendeSegment
 
