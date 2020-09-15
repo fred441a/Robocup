@@ -18,7 +18,7 @@ def første_væg(robot,ultra_sensor):
         # doing nothing (waiting for 5 milliseconds) while the measured
         # distance is still greater than 300 mm.
         while ultra_sensor.distance() > 130:
-            Wait(5)
+            wait(5)
         længde = robot.distance()
         print(robot.distance())
         # Turn right by 90 degrees

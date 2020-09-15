@@ -1,9 +1,9 @@
 from pybricks.ev3devices import Motor, ColorSensor
 from pybricks.parameters import Port
-from pybricks.tools import Wait
+from pybricks.tools import wait
 from pybricks.robotics import DriveBase
 
-def Kør_Lige_ud(drivebase,linesensor,threshold, PROPORTIONAL_GAIN):
+def Kør_Lige_ud(DriveBase,line_sensor,threshold, PROPORTIONAL_GAIN):
         # Set the drive speed at 200 millimeters per second.
     DRIVE_SPEED = 200
 
@@ -15,15 +15,15 @@ def Kør_Lige_ud(drivebase,linesensor,threshold, PROPORTIONAL_GAIN):
     # steers at 10*1.2 = 12 degrees per second.
     while True:
         # Calculate the deviation from the threshold.
-        deviation = linesensor.reflection() - threshold
+        deviation = line_sensor.reflection() - threshold
 
         # Calculate the turn rate.
         turn_rate = PROPORTIONAL_GAIN * deviation
 
         # Set the drive base speed and turn rate.
-        drivebase.drive(DRIVE_SPEED, turn_rate)
+        DriveBase.drive(DRIVE_SPEED, turn_rate)
 
         # You can wait for a short time or do other things in this loop.
-        if linesensor.reflection() < 15:
+        if line_sensor.reflection() < 15:
             break
-        Wait(10)
+        wait(10)

@@ -2,7 +2,7 @@
 
 from pybricks.ev3devices import Motor, ColorSensor,  UltrasonicSensor
 from pybricks.parameters import Port
-from pybricks.tools import Wait
+from pybricks.tools import wait
 from pybricks.robotics import DriveBase
 from pybricks.hubs import EV3Brick
 from pybricks.parameters import Button, Direction
