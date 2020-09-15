@@ -11,6 +11,7 @@ from pybricks.parameters import Button, Direction
 from Ligeud import Kør_Lige_ud
 from SkiftBane import Skift_linje_Højre , Skift_linje_Venstre, FørsteSegment
 from Trekant import indtil_hurdle, første_væg, væk_igen, ret_ind
+from RundtomFlaske import Rundt_Om_Flaske, SjetteSegment, OttendeSegment
 
 # Initialize the motors.
 left_motor = Motor(Port.B, positive_direction=Direction.COUNTERCLOCKWISE, gears=[12,20])
@@ -53,10 +54,7 @@ while True:
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
         Kør_Lige_ud(robot,line_sensor,threshold,2)
-        indtil_hurdle(robot)
-        første_væg(robot,ultra_sensor)
-        ret_ind(robot)
-        Kør_Lige_ud(robot,line_sensor,threshold,-2)
+        SjetteSegment
         break
         
 

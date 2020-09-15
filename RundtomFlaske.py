@@ -15,3 +15,7 @@ def Rundt_Om_Flaske(DriveBase, sensor,grey):
 def SjetteSegment(robot,line_sensor,threshold,BLACK):
     Rundt_Om_Flaske(DriveBase,sensor,BLACK)
     Kør_Lige_ud(robot,line_sensor,threshold,-2)
+
+def OttendeSegment(robot,line_sensor,threshold,BLACK):
+    Rundt_Om_Flaske(DriveBase,sensor,BLACK)
+    Kør_Lige_ud(robot,line_sensor,threshold,2)
