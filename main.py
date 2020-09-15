@@ -2,7 +2,7 @@
 
 from pybricks.ev3devices import Motor, ColorSensor,  UltrasonicSensor
 from pybricks.parameters import Port
-from pybricks.tools import wait
+#from pybricks.tools import wait
 from pybricks.robotics import DriveBase
 from pybricks.hubs import EV3Brick
 from pybricks.parameters import Button, Direction
@@ -24,8 +24,6 @@ line_sensor = ColorSensor(Port.S1)
 
 #intialize the ultrasonic sensor
 ultra_sensor =  UltrasonicSensor(Port.S2)
-
-
 
 # Initialize the drive base.
 robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=191)
