@@ -1,6 +1,6 @@
-def stop_på_midte(drivebase, ultra_sensore):
+def stop_på_midte(DriveBase, ultra_sensor):
     while True:
-        if ultra_sensore.distance() > 1368:
-            drivebase.drive(100,00)
+        if ultra_sensor.distance() > 1368:
+            DriveBase.drive(100,0)
         else:
             break

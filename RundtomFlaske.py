@@ -1,13 +1,13 @@
 from Ligeud import Kør_Lige_ud
 
-def Rundt_Om_Flaske(DriveBase, sensor,grey):
+def Rundt_Om_Flaske(DriveBase,sensor,grey):
     DriveBase.turn(45)
     DriveBase.straight(250)
     DriveBase.turn(-45)
     DriveBase.straight(250)
     print(grey)
-    while sensor.reflection() > grey:
-        print(sensor.reflection())
+    while line_sensor.reflection() > grey:
+        print(line_sensor.reflection())
         DriveBase.drive(100,0)
     DriveBase.stop()
     DriveBase.turn(45)

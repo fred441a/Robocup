@@ -54,7 +54,7 @@ while True:
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
         Kør_Lige_ud(robot,line_sensor,threshold,2)
-        SjetteSegment(robot,line_sensor,threshold,BLACK)
+        SjetteSegment(robot,line_sensor)
         break
         
 
