@@ -12,6 +12,7 @@ from Ligeud import Kør_Lige_ud
 from SkiftBane import Skift_linje_Højre, Skift_linje_Venstre, FørsteSegment
 from Trekant import indtil_hurdle, første_væg, væk_igen, ret_ind
 from RundtomFlaske import Rundt_Om_Flaske, SjetteSegment, OttendeSegment
+from Stoppåmidten import stop_på_midten
 
 # Initialize the motors.
 left_motor = Motor(Port.B, positive_direction=Direction.COUNTERCLOCKWISE, gears=[12,20])

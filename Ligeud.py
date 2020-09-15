@@ -1,6 +1,6 @@
 from pybricks.ev3devices import Motor, ColorSensor
 from pybricks.parameters import Port
-from pybricks.tools import wait
+from pybricks.tools import Wait
 from pybricks.robotics import DriveBase
 
 def Kør_Lige_ud(drivebase,linesensor,threshold, PROPORTIONAL_GAIN):
@@ -26,4 +26,4 @@ def Kør_Lige_ud(drivebase,linesensor,threshold, PROPORTIONAL_GAIN):
         # You can wait for a short time or do other things in this loop.
         if linesensor.reflection() < 15:
             break
-        wait(10)
+        Wait(10)
