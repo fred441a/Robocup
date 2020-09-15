@@ -1,4 +1,6 @@
 from Ligeud import Kør_Lige_ud
+from pybricks.ev3devices import Motor, ColorSensor,  UltrasonicSensor
+from pybricks.robotics import DriveBase
 
 def Rundt_Om_Flaske(DriveBase,sensor,grey):
     DriveBase.turn(45)

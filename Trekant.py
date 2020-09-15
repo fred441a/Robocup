@@ -1,4 +1,6 @@
 from pybricks.tools import Wait
+from pybricks.ev3devices import Motor, ColorSensor,  UltrasonicSensor
+from pybricks.robotics import DriveBase
 
 # first turn
 def indtil_hurdle(DriveBase):
