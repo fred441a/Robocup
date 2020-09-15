@@ -52,15 +52,9 @@ while True:
         ev3.speaker.beep()
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
-        Kør_Lige_ud(robot,line_sensor,threshold,2)
+        Kør_Lige_ud(robot,line_sensor,threshold,-2)
         SjetteSegment(robot,line_sensor,threshold,BLACK)
-        Kør_Lige_ud(robot,line_sensor,threshold, 2)
-        indtil_hurdle(robot)
-        første_væg(robot,ultra_sensor)
-        væk_igen(robot,længde)
-        ret_ind(robot)
-        Kør_Lige_ud(robot,line_sensor,threshold,2)
-        OttendeSegment(robot,line_sensor,threshold,BLACK)
+        Kør_Lige_ud(robot,line_sensor,threshold, -2)
         break
         
 

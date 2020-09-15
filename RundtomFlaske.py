@@ -13,9 +13,9 @@ def Rundt_Om_Flaske(DriveBase,sensor,grey):
     robot.turn(45)
 
 def SjetteSegment(robot,line_sensor,threshold,BLACK):
-    Rundt_Om_Flaske(robot,sensor,BLACK)
+    Rundt_Om_Flaske(DriveBase,sensor,grey)
     Kør_Lige_ud(robot,line_sensor,threshold,-2)
 
 def OttendeSegment(robot,line_sensor,threshold,BLACK):
-    Rundt_Om_Flaske(robot,sensor,BLACK)
+    Rundt_Om_Flaske(DriveBase,sensor,grey)
     Kør_Lige_ud(robot,line_sensor,threshold,2)
