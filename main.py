@@ -9,10 +9,11 @@ from pybricks.parameters import Button, Direction
 
 #Vores Libraries
 from Ligeud import Kør_Lige_ud
-from SkiftBane import Skift_linje_Højre, Skift_linje_Venstre, FørsteSegment
-from Trekant import indtil_hurdle, første_væg, væk_igen, ret_ind
+from SkiftBane import FørsteSegment
+from Trekant import SyvendeSegment
 from RundtomFlaske import Rundt_Om_Flaske, SjetteSegment, OttendeSegment
 from Stoppåmidten import stop_på_midten
+from FireGrå import FireGrå
 
 # Initialize the motors.
 left_motor = Motor(Port.B, positive_direction=Direction.COUNTERCLOCKWISE, gears=[12,20])
@@ -52,9 +53,20 @@ while True:
         ev3.speaker.beep()
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
-        Kør_Lige_ud(robot,line_sensor,threshold,-2)
+        FørsteSegment(robot,line_sensor,threshold,BLACK)
+        print("Færdig med første segment")
+        Kør_Lige_ud(robot,line_sensor,threshold,2)
+        Kør_Lige_ud(robot,line_sensor,threshold,2)
+        FireGrå(robot,line_sensor,BLACK,WHITE)
+        print("Færdig med fire grå")
+        Kør_Lige_ud(robot,line_sensor,threshold,2)
         SjetteSegment(robot,line_sensor,threshold,BLACK)
-        Kør_Lige_ud(robot,line_sensor,threshold, -2)
+        print("Færdig med sjette segment")
+        SyvendeSegment(robot,ultra_sensor,ev3)
+        Kør_Lige_ud(robot,line_sensor,threshold,2)
+        print("Færdig med syvende segment")
+        OttendeSegment(robot,line_sensor,threshold,BLACK)
+        print("ottende segment")
         break
         
 
