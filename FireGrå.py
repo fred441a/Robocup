@@ -2,6 +2,9 @@ from Ligeud import Kør_Lige_ud
 
 lineDist = 200
 
+
+
+
 def FireGrå(robot, sensor, grey, white):
     threshold = (grey+white)/2
     robot.straight(500)
