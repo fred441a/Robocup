@@ -10,10 +10,10 @@ def FireGrå(robot, sensor, grey, white):
     print("Den turner første gang")
 
     if(sensor.reflection() >= white):
-        robot.drive(175,0)
+        robot.straight(175)
 
         if(sensor.reflection() >= white):
-            robot.drive(175,0)
+            robot.straight(175)
             robot.turn(20)
             print("Den turner")
             Kør_Lige_ud(robot,sensor,threshold,-2)
@@ -22,7 +22,7 @@ def FireGrå(robot, sensor, grey, white):
             # "fejl lyd"
             ev3.speaker.beep()
     else:
-        # "fejl lyd"
+            # "fejl lyd"
             ev3.speaker.beep()
 
 
