@@ -1,6 +1,6 @@
 from Ligeud import Kør_Lige_ud
 
-lineDist = 200
+
 
 
 

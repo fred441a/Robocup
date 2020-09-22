@@ -15,6 +15,14 @@ from RundtomFlaske import Rundt_Om_Flaske, SjetteSegment, OttendeSegment
 from Stoppåmidten import stop_på_midten
 from FireGrå import FireGrå
 
+        
+def beeper(ev3,times):
+    integer = times
+    while integer > 0:
+        ev3.speaker.beep()
+        integer = 1-integer
+        wait(10)
+
 # Initialize the motors.
 left_motor = Motor(Port.B, positive_direction=Direction.COUNTERCLOCKWISE, gears=[12,20])
 right_motor = Motor(Port.C, positive_direction=Direction.COUNTERCLOCKWISE, gears=[12,20])
@@ -68,7 +76,7 @@ while True:
         SjetteSegment(robot,line_sensor,threshold,BLACK)
         beeper(ev3,6)
         print("Færdig med sjette segment")
-        SyvendeSegment(robot,ultra_sensor,ev3)
+        SyvendeSegment(robot,ultra_sensor)
         beeper(ev3,7)
         Kør_Lige_ud(robot,line_sensor,threshold,2)
         beeper(ev3,8)
@@ -77,9 +85,3 @@ while True:
         beeper(ev3,9)
         print("ottende segment")
         break
-        
-def beeper(ev3,times):
-    integer = times
-    while times > 0:
-        ev3.speaker.beep()
-        wait(10)
