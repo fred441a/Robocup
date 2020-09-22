@@ -3,7 +3,9 @@ from Ligeud import Kør_Lige_ud
 
 
 
-def FireGrå(robot, sensor, grey, white):
+
+
+def FireGrå(robot, sensor, grey, white,ev3):
     threshold = (grey+white)/2
     robot.straight(500)
     robot.turn(-22)

@@ -1,4 +1,5 @@
-from Ligeud import Kør_Lige_ud
+from Ligeud import Kør_Lige_ud , Kør_Lige_ud_Ind_TIL
+from pybricks.tools import wait
 
 def Skift_linje_Højre(DriveBase,sensor,grey):
     DriveBase.turn(45)
@@ -25,4 +26,6 @@ def FørsteSegment(robot,line_sensor,threshold,BLACK):
         Skift_linje_Højre(robot,line_sensor,BLACK)
         Kør_Lige_ud(robot,line_sensor,threshold,2)
         Skift_linje_Venstre(robot,line_sensor,BLACK)
-        Kør_Lige_ud(robot,line_sensor,threshold,-3)
+        Kør_Lige_ud_Ind_TIL(robot,line_sensor,threshold,-3, 10)
+        Kør_Lige_ud(robot,line_sensor,threshold,3)
+        
