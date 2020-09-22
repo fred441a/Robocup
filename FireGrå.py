@@ -27,6 +27,23 @@ def FireGrå(robot, sensor, grey, white):
         # "fejl lyd"
             ev3.speaker.beep()
 
+def FireGråAlt(robot, sensor, grey, white):
+    threshold = (grey+white)/2
+    robot.straight(500)
+    robot.turn(-22)
+    print("Den turner første gang")
+    robot.straight(200)
+
+    while(sensor.reflection() >= white):
+        robot.drive(175,0)
+
+        if(sensor.reflection() < white):
+            robot.stop()
+            break
+        wait(10)
+    robot.turn(20)
+    print("Den turner")
+    Kør_Lige_ud(robot,sensor,threshold,-2)
 
 
 
