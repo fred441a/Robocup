@@ -1,26 +1,30 @@
 from Ligeud import Kør_Lige_ud
 
-lineDist = 200
-
 
 
 
 def FireGrå(robot, sensor, grey, white):
     threshold = (grey+white)/2
     robot.straight(500)
-    robot.turn(-45)
+    robot.turn(-22)
+    print("Den turner første gang")
 
     if(sensor.reflection() >= white):
-        robot.drive(200,0)
+        robot.drive(175,0)
 
         if(sensor.reflection() >= white):
-            robot.drive(200,0)
-            robot.turn(45)
+            robot.drive(175,0)
+            robot.turn(20)
+            print("Den turner")
             Kør_Lige_ud(robot,sensor,threshold,-2)
 
         else:
             # "fejl lyd"
             ev3.speaker.beep()
+    else:
+        # "fejl lyd"
+            ev3.speaker.beep()
+
 
 
 
