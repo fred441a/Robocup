@@ -42,24 +42,11 @@ WHITE = None
 
 #Løser det første segment hvor robotten skal skifte linje 2 gange
 
-<<<<<<< HEAD
 
 
 # Start following the line endlessly.
 
-while True:
-    if Button.DOWN in ev3.buttons.pressed():
-        BLACK = line_sensor.reflection()
-        ev3.speaker.beep()
-    if Button.UP in ev3.buttons.pressed():
-        WHITE = line_sensor.reflection()
-        ev3.speaker.beep()
-    if BLACK != None and WHITE != None:
-        threshold = (BLACK + WHITE) / 2
         
-        FireGrå(robot,line_sensor,BLACK,WHITE,ev3)
-        
-=======
 def FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor):
         FørsteSegment(robot,line_sensor,threshold,BLACK)
         ev3.speaker.say("Done with first segment")
@@ -90,7 +77,4 @@ while True:
         threshold = (BLACK + WHITE) / 2
         #FørsteSegment(robot,line_sensor,threshold,BLACK)
         FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor)
-
-
->>>>>>> e16bcbeb43a6a6f5022a69d6d2ad68f44db953d6
         break
