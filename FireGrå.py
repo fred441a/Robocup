@@ -1,6 +1,6 @@
 from Ligeud import Kør_Lige_ud
 
-def SerIkkeGrå1(robot, sensor, grey, white, ev3):
+def SerIkkeMellemrum1(robot, sensor, grey, white, ev3):
     ev3.speaker.beep()
     robot.turn(-10)
 
@@ -14,7 +14,7 @@ def SerIkkeGrå1(robot, sensor, grey, white, ev3):
             print("Den turner anden gang")
             Kør_Lige_ud(robot,sensor,threshold,-2)
 
-def SerIkkeGrå2(robot, sensor, grey, white, ev3):
+def SerIkkeMellemrum2(robot, sensor, grey, white, ev3):
     ev3.speaker.beep()
     robot.turn(-10)
 
