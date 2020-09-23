@@ -1,51 +1,54 @@
 from Ligeud import Kør_Lige_ud
 
+def SerIkkeGrå1(robot, sensor, grey, white, ev3):
+    ev3.speaker.beep()
+    robot.turn(-10)
+
+    if(sensor.reflection() > grey):
+        robot.straight(190)
+        print("Den ser hvid og kører ligeud 17.5cm")
+
+        if(sensor.reflection() > grey):
+            robot.straight(175)
+            robot.turn(45)
+            print("Den turner anden gang")
+            Kør_Lige_ud(robot,sensor,threshold,-2)
+
+def SerIkkeGrå2(robot, sensor, grey, white, ev3):
+    ev3.speaker.beep()
+    robot.turn(-10)
+
+    if(sensor.reflection() > grey):
+        robot.straight(175)
+        robot.turn(45)
+        print("Den turner anden gang")
+        Kør_Lige_ud(robot,sensor,threshold,-2)
+
+
+
+
 def FireGrå(robot, sensor, grey, white,ev3):
     threshold = (grey+white)/2
     robot.straight(500)
     robot.turn(-45)
     print("Den turner første gang")
 
-    if(sensor.reflection() >= grey):
+    if(sensor.reflection() > grey):
         robot.straight(190)
         print("Den ser hvid og kører ligeud 17.5cm")
 
-        if(sensor.reflection() >= grey):
+        if(sensor.reflection() > grey):
             robot.straight(175)
             robot.turn(45)
             print("Den turner anden gang")
             Kør_Lige_ud(robot,sensor,threshold,-2)
 
         else:
-            # "fejl lyd"
-            ev3.speaker.beep()
+            SerIkkeGrå2(robot, line_sensor, BLACK, WHITE, ev3)
+            
     else:
-            # "fejl lyd"
-            ev3.speaker.beep()
-
-def FireGråAlt(robot, sensor, grey, white):
-    threshold = (grey+white)/2
-    robot.straight(500)
-    robot.turn(-22)
-    print("Den turner første gang")
-    robot.straight(200)
-
-    while(sensor.reflection() >= white):
-        robot.drive(175,0)
-
-        if(sensor.reflection() < white):
-            robot.stop()
-            break
-        wait(10)
-    robot.turn(20)
-    print("Den turner")
-    Kør_Lige_ud(robot,sensor,threshold,-2)
+            SerIkkeGrå1(robot, line_sensor, BLACK, WHITE, ev3)
+            
 
 
 
-''' Dette er en tidligere kode
- def FireGrå(DriveBase,sensor,grey, white):
-    while sensor.reflection() < grey:
-        robot.turn(-5)
-    while sensor.reflection() >= white:
-        robot.turn(-5) '''
