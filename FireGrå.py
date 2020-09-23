@@ -1,23 +1,19 @@
 from Ligeud import Kør_Lige_ud
 
-
-
-
-
-
 def FireGrå(robot, sensor, grey, white,ev3):
     threshold = (grey+white)/2
     robot.straight(500)
-    robot.turn(-22)
+    robot.turn(-45)
     print("Den turner første gang")
 
-    if(sensor.reflection() >= white):
-        robot.straight(175)
+    if(sensor.reflection() >= grey):
+        robot.straight(190)
+        print("Den ser hvid og kører ligeud 17.5cm")
 
-        if(sensor.reflection() >= white):
+        if(sensor.reflection() >= grey):
             robot.straight(175)
-            robot.turn(20)
-            print("Den turner")
+            robot.turn(45)
+            print("Den turner anden gang")
             Kør_Lige_ud(robot,sensor,threshold,-2)
 
         else:
