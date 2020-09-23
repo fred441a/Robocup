@@ -26,6 +26,6 @@ def FørsteSegment(robot,line_sensor,threshold,BLACK):
         Skift_linje_Højre(robot,line_sensor,BLACK)
         Kør_Lige_ud(robot,line_sensor,threshold,2)
         Skift_linje_Venstre(robot,line_sensor,BLACK)
-        Kør_Lige_ud_Ind_TIL(robot,line_sensor,threshold,-3, 10)
-        Kør_Lige_ud(robot,line_sensor,threshold,3)
+        #Kør_Lige_ud_Ind_TIL(robot,line_sensor,threshold,-3, 4000)
+        Kør_Lige_ud(robot,line_sensor,threshold,-3)
         
