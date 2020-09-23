@@ -75,6 +75,7 @@ while True:
         ev3.speaker.beep()
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
+        FireGrå(robot,line_sensor,BLACK,WHITE,ev3)
         #FørsteSegment(robot,line_sensor,threshold,BLACK)
-        FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor)
+        #FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor)
         break

@@ -29,6 +29,8 @@ def Kør_Lige_ud(DriveBase,line_sensor,threshold, PROPORTIONAL_GAIN):
             break
         wait(10)
 
+
+#Frederiks lortekode
 def Kør_Lige_ud_Ind_TIL(DriveBase,line_sensor,threshold, PROPORTIONAL_GAIN,tid):
     timer = StopWatch()
         # Set the drive speed at 200 millimeters per second.

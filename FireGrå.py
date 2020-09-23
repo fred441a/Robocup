@@ -1,6 +1,8 @@
 from Ligeud import Kør_Lige_ud
 
-def SerIkkeMellemrum1(robot, sensor, grey, white, ev3):
+def SerIkkeGrå1(robot, sensor, grey, white, ev3):
+    print("den ser grå1")
+    threshold = (grey+white)/2
     ev3.speaker.beep()
     robot.turn(-10)
 
@@ -12,9 +14,11 @@ def SerIkkeMellemrum1(robot, sensor, grey, white, ev3):
             robot.straight(175)
             robot.turn(45)
             print("Den turner anden gang")
-            Kør_Lige_ud(robot,sensor,threshold,-2)
+            Kør_Lige_ud(robot,sensor,threshold,-3)
 
-def SerIkkeMellemrum2(robot, sensor, grey, white, ev3):
+def SerIkkeGrå2(robot, sensor, grey, white, ev3):
+    print("den ser grå2")
+    threshold = (grey+white)/2
     ev3.speaker.beep()
     robot.turn(-10)
 
@@ -22,7 +26,7 @@ def SerIkkeMellemrum2(robot, sensor, grey, white, ev3):
         robot.straight(175)
         robot.turn(45)
         print("Den turner anden gang")
-        Kør_Lige_ud(robot,sensor,threshold,-2)
+        Kør_Lige_ud(robot,sensor,threshold,-3)
 
 
 
@@ -41,13 +45,13 @@ def FireGrå(robot, sensor, grey, white,ev3):
             robot.straight(175)
             robot.turn(45)
             print("Den turner anden gang")
-            Kør_Lige_ud(robot,sensor,threshold,-2)
+            Kør_Lige_ud(robot,sensor,threshold,-3)
 
         else:
-            SerIkkeGrå2(robot, line_sensor, BLACK, WHITE, ev3)
+            SerIkkeGrå2(robot, sensor, grey, white, ev3)
             
     else:
-            SerIkkeGrå1(robot, line_sensor, BLACK, WHITE, ev3)
+            SerIkkeGrå1(robot, sensor, grey,white, ev3)
             
 
 
