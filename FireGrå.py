@@ -14,7 +14,7 @@ def SerIkkeGrå1(robot, sensor, grey, white, ev3):
             robot.straight(175)
             robot.turn(45)
             print("Den turner anden gang")
-            Kør_Lige_ud(robot,sensor,threshold,-3)
+            Kør_Lige_ud(robot,sensor,threshold,-4)
 
 def SerIkkeGrå2(robot, sensor, grey, white, ev3):
     print("den ser grå2")
@@ -26,7 +26,7 @@ def SerIkkeGrå2(robot, sensor, grey, white, ev3):
         robot.straight(175)
         robot.turn(45)
         print("Den turner anden gang")
-        Kør_Lige_ud(robot,sensor,threshold,-3)
+        Kør_Lige_ud(robot,sensor,threshold,-4)
 
 
 
@@ -45,9 +45,9 @@ def FireGrå(robot, sensor, grey, white,ev3):
         if(sensor.reflection() > grey):
             print("SER HVID IGEN, ALT ER GODT")
             robot.straight(175)
-            robot.turn(45)
+            robot.turn(30)
             
-            Kør_Lige_ud(robot,sensor,threshold,-3)
+            Kør_Lige_ud(robot,sensor,threshold,-4)
 
         else:
             SerIkkeGrå2(robot, sensor, grey, white, ev3)
