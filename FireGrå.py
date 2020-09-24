@@ -70,7 +70,7 @@ def FireGråAlternativ(robot, sensor, grey, white,ev3):
         print("SER GRÅ")
         robot.stop()
         robot.turn(45)
-        Kør_Lige_ud(robot,sensor,threshold,-3)
+        Kør_Lige_ud(robot,sensor,threshold,-4)
         
         if sensor.reflection < grey:
             robot.stop()
