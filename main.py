@@ -13,7 +13,8 @@ from SkiftBane import FørsteSegment
 from Trekant import SyvendeSegment
 from RundtomFlaske import Rundt_Om_Flaske, SjetteSegment, OttendeSegment
 from Stoppåmidten import stop_på_midten
-from FireGrå import FireGrå
+from FireGrå import FireGrå, FireGråAlternativ
+from vippe import TredjeSegment
 
 
 
@@ -76,6 +77,7 @@ while True:
         ev3.speaker.beep()
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
-        stop_på_midten(robot, ultra_sensor)
+        FireGrå(robot,line_sensor,BLACK,WHITE,ev3)
+        #TredjeSegment(robot,line_sensor,threshold)
         #FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor)
         break
