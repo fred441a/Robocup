@@ -2,13 +2,13 @@ from Ligeud import Kør_Lige_ud
 
 def Rundt_Om_Flaske(robot,sensor,grey):
     robot.turn(45)
-    robot.straight(250)
+    robot.straight(400)
     robot.turn(-45)
-    robot.straight(250)
+    robot.straight(400)
     print(grey)
     while sensor.reflection() > grey:
         print(sensor.reflection())
-        robot.drive(100,0)
+        robot.drive(200,0)
     robot.stop()
     robot.turn(45)
 
