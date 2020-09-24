@@ -50,15 +50,16 @@ WHITE = None
 def FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor):
         FørsteSegment(robot,line_sensor,threshold,BLACK)
         ev3.speaker.say("Done with first segment")
-        Kør_Lige_ud(robot,line_sensor,threshold,2)
-        Kør_Lige_ud(robot,line_sensor,threshold,2)
+        Kør_Lige_ud(robot,line_sensor,threshold,-2)
+        ev3.speaker.say("Done with straight")
+        Kør_Lige_ud(robot,line_sensor,threshold,-2)
         FireGrå(robot,line_sensor,BLACK,WHITE,ev3)
         ev3.speaker.say("Done with four grey")
         Kør_Lige_ud(robot,line_sensor,threshold,2)
         SjetteSegment(robot,line_sensor,threshold,BLACK)
         ev3.speaker.say("done with six segment")
         SyvendeSegment(robot,ultra_sensor)
-        Kør_Lige_ud(robot,line_sensor,threshold,2)
+        Kør_Lige_ud(robot,line_sensor,threshold,-2)
         ev3.speaker.say("done with seventh segment")
         OttendeSegment(robot,line_sensor,threshold,BLACK)
         ev3.speaker.say("done with eight segment")
@@ -75,7 +76,6 @@ while True:
         ev3.speaker.beep()
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
-        FireGrå(robot,line_sensor,BLACK,WHITE,ev3)
-        #FørsteSegment(robot,line_sensor,threshold,BLACK)
+        stop_på_midten(robot, ultra_sensor)
         #FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor)
         break
