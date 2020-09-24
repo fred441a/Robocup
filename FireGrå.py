@@ -55,6 +55,27 @@ def FireGrå(robot, sensor, grey, white,ev3):
     else:
             SerIkkeGrå1(robot, sensor, grey,white, ev3)
             
+def FireGråAlternativ(robot, sensor, grey, white,ev3):
+    threshold = (grey+white)/2
+    robot.straight(500)
+    robot.turn(-45)
+    print("TURNER 1. GANG")
+    robot.straight(200)
+
+    while sensor.reflection() > grey:
+        print("SER HVID, ALT ER GODT")
+        robot.drive(150,0)
+        
+    if sensor.reflection() < white:
+        print("SER GRÅ")
+        robot.stop()
+        robot.turn(45)
+        Kør_Lige_ud(robot,sensor,threshold,-3)
+        
+        if sensor.reflection < grey:
+            robot.stop()
+            break
+        wait(10)
 
 
 
