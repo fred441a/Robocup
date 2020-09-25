@@ -1,5 +1,7 @@
 from pybricks.parameters import Stop
 from Ligeud import Kør_Lige_ud
+from pybricks.tools import wait
+
 def dreje_mod_flaske(drivebase):
     drivebase.straight(200)
     drivebase.turn(90)
@@ -18,7 +20,7 @@ def Kør_hen_til_flaske(DriveBase,ultra_sensor):
 def løfte_flaske(Arm_Motor, openclose):
     if openclose:
         print(Arm_Motor.angle())
-        Arm_Motor.run_target(200,1300, then=Stop.HOLD, wait=True)
+        Arm_Motor.run_target(200,1500, then=Stop.HOLD, wait=True)
     else:
         Arm_Motor.run_target(200,0, then=Stop.HOLD, wait=True)
 
@@ -32,13 +34,13 @@ def Kør_indtil_sort(drivebase,line_sensor):
 
 
 def AndetSegment(drivebase,Arm_Motor,ultra_sensor,line_sensor,threshold):
+    drivebase.reset()
     dreje_mod_flaske(drivebase)
     drivebase.reset()
     Kør_hen_til_flaske(drivebase,ultra_sensor)
     løfte_flaske(Arm_Motor,True)
     Kør_indtil_sort(drivebase,line_sensor)
     løfte_flaske(Arm_Motor,False)
-    drivebase.straight(20)
     løfte_flaske(Arm_Motor,True)
     drivebase.straight(-drivebase.distance())
     drivebase.turn(-90)
