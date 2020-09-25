@@ -18,7 +18,7 @@ def Kør_hen_til_flaske(DriveBase,ultra_sensor):
 def løfte_flaske(Arm_Motor, openclose):
     if openclose:
         print(Arm_Motor.angle())
-        Arm_Motor.run_target(200,2000, then=Stop.HOLD, wait=True)
+        Arm_Motor.run_target(200,1300, then=Stop.HOLD, wait=True)
     else:
         Arm_Motor.run_target(200,0, then=Stop.HOLD, wait=True)
 
@@ -26,7 +26,7 @@ def Kør_indtil_sort(drivebase,line_sensor):
     while True:
         drivebase.drive(100,0)
         if line_sensor.reflection() < 15:
-            DriveBase.stop()
+            drivebase.stop()
             break
         wait(10)
 

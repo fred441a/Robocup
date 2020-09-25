@@ -10,12 +10,12 @@ def Rundt_Om_Flaske(robot,sensor,grey):
         print(sensor.reflection())
         robot.drive(200,0)
     robot.stop()
-    robot.turn(45)
+    robot.turn(60)
 
 def SjetteSegment(robot,line_sensor,threshold,BLACK):
     Rundt_Om_Flaske(robot,line_sensor,BLACK)
-    Kør_Lige_ud(robot,line_sensor,threshold,-2)
+    Kør_Lige_ud(robot,line_sensor,threshold,-3)
 
 def OttendeSegment(robot,line_sensor,threshold,BLACK):
     Rundt_Om_Flaske(robot,line_sensor,BLACK)
-    Kør_Lige_ud(robot,line_sensor,threshold,2)
+    Kør_Lige_ud(robot,line_sensor,threshold,3)
