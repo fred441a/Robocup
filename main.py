@@ -15,6 +15,7 @@ from RundtomFlaske import Rundt_Om_Flaske, SjetteSegment, OttendeSegment
 from Stoppåmidten import stop_på_midten
 from FireGrå import FireGrå, FireGråAlternativ
 from vippe import TredjeSegment
+#from HenteFlaske import AndetSegment
 
 
 
@@ -64,6 +65,7 @@ def FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor):
         ev3.speaker.say("done with seventh segment")
         OttendeSegment(robot,line_sensor,threshold,BLACK)
         ev3.speaker.say("done with eight segment")
+        stop_på_midten(robot, ultra_sensor)
 
 
 # Start following the line endlessly.
@@ -77,7 +79,7 @@ while True:
         ev3.speaker.beep()
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
-        FireGrå(robot,line_sensor,BLACK,WHITE,ev3)
-        #TredjeSegment(robot,line_sensor,threshold)
+        SjetteSegment(robot,line_sensor,threshold,BLACK)
+
         #FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor)
         break

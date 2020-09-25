@@ -1,4 +1,5 @@
 from pybricks.parameters import Stop
+from Ligeud import Kør_Lige_ud
 def dreje_mod_flaske(drivebase):
     drivebase.straight(200)
     drivebase.turn(90)
@@ -6,7 +7,7 @@ def dreje_mod_flaske(drivebase):
 #den kører frem og får flasken ind i grebet. Vi har målt at der er 8 cm fra sensor til flasken
 def Kør_hen_til_flaske(DriveBase,ultra_sensor):
     while True:
-        if ultra_sensor.distance() < 93:
+        if ultra_sensor.distance() < 102:
             DriveBase.stop()
             print("afstand fundet")
             break
@@ -17,9 +18,35 @@ def Kør_hen_til_flaske(DriveBase,ultra_sensor):
 def løfte_flaske(Arm_Motor, openclose):
     if openclose:
         print(Arm_Motor.angle())
-        Arm_Motor.run_target(200,1300, then=Stop.HOLD, wait=True)
+        Arm_Motor.run_target(200,2000, then=Stop.HOLD, wait=True)
     else:
         Arm_Motor.run_target(200,0, then=Stop.HOLD, wait=True)
+
+def Kør_indtil_sort(drivebase,line_sensor):
+    while True:
+        drivebase.drive(100,0)
+        if line_sensor.reflection() < 15:
+            DriveBase.stop()
+            break
+        wait(10)
+
+
+def AndetSegment(drivebase,Arm_Motor,ultra_sensor,line_sensor,threshold):
+    dreje_mod_flaske(drivebase)
+    drivebase.reset()
+    Kør_hen_til_flaske(drivebase,ultra_sensor)
+    løfte_flaske(Arm_Motor,True)
+    Kør_indtil_sort(drivebase,line_sensor)
+    løfte_flaske(Arm_Motor,False)
+    drivebase.straight(20)
+    løfte_flaske(Arm_Motor,True)
+    drivebase.straight(-drivebase.distance())
+    drivebase.turn(-90)
+    Kør_Lige_ud(drivebase,line_sensor,threshold,-2)
+
+
+
+
    
 
 

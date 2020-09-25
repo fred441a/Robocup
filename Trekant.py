@@ -14,7 +14,7 @@ def første_væg(robot,ultra_sensor):
     # Wait until an obstacle is detected. This is done by repeatedly
     # doing nothing (waiting for 5 milliseconds) while the measured
     # distance is still greater than 300 mm.
-    while ultra_sensor.distance() > 130:
+    while ultra_sensor.distance() > 136:
         wait(5)
     længde = robot.distance()
     print(robot.distance())
