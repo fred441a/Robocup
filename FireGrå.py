@@ -33,9 +33,6 @@ def FireGrå(robot, sensor, grey, white,ev3):
     print("TURNER 2. GANG")
     Kør_Lige_ud(robot,sensor,threshold,-4)
         
-     
-    else:
-            SerIkkeGrå1(robot, sensor, grey,white, ev3)
             
 
 
