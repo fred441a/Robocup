@@ -7,7 +7,7 @@ def dreje_mod_flaske(drivebase):
 #den kører frem og får flasken ind i grebet. Vi har målt at der er 8 cm fra sensor til flasken
 def Kør_hen_til_flaske(DriveBase,ultra_sensor):
     while True:
-        if ultra_sensor.distance() < 102:
+        if ultra_sensor.distance() < 120:
             DriveBase.stop()
             print("afstand fundet")
             break
