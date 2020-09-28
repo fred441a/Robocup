@@ -79,6 +79,7 @@ while True:
         ev3.speaker.beep()
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
-        AndetSegment(robot,Arm_Motor,ultra_sensor,line_sensor,threshold)
-        TredjeSegment(robot,line_sensor,threshold)
+        #AndetSegment(robot,Arm_Motor,ultra_sensor,line_sensor,threshold)
+        #TredjeSegment(robot,line_sensor,threshold)
+        stop_på_midten(robot, line_sensor, ultra_sensor, threshold)
         break
