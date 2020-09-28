@@ -14,7 +14,7 @@ def Kør_hen_til_flaske(drivebase,ultra_sensor):
             print("afstand fundet")
             break
         else:
-            drivebase.drive(100,0)
+            drivebase.drive(200,0)
 
 #set openclose til tru hvis den skal åbne og false hvis den skal lukke
 def løfte_flaske(Arm_Motor, openclose):
@@ -28,7 +28,6 @@ def Kør_indtil_sort(drivebase,line_sensor):
     while True:
         drivebase.drive(200,0)
         if line_sensor.reflection() < 15:
-            drivebase.straight(80)
             drivebase.stop()
             break
         wait(5)
@@ -40,7 +39,7 @@ def AndetSegment(drivebase,Arm_Motor,ultra_sensor,line_sensor,threshold):
     drivebase.reset()
     Kør_hen_til_flaske(drivebase,ultra_sensor)
     løfte_flaske(Arm_Motor,True)
-    drivebase.straight(220)
+    drivebase.straight(250)
     løfte_flaske(Arm_Motor,False)
     løfte_flaske(Arm_Motor,True)
     drivebase.straight(-drivebase.distance())
