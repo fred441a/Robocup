@@ -39,7 +39,7 @@ def AndetSegment(drivebase,Arm_Motor,ultra_sensor,line_sensor,threshold):
     drivebase.reset()
     Kør_hen_til_flaske(drivebase,ultra_sensor)
     løfte_flaske(Arm_Motor,True)
-    Kør_indtil_sort(drivebase,line_sensor)
+    drivebase.straight(200)
     løfte_flaske(Arm_Motor,False)
     løfte_flaske(Arm_Motor,True)
     drivebase.straight(-drivebase.distance())

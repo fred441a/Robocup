@@ -5,7 +5,6 @@ def stop_på_midten(DriveBase, ultra_sensor):
     if ultra_sensor.distance() < 150:
             DriveBase.stop()
             print("afstand fundet")
-            break
     drivebase.reset()
     robot.straight(-1275)
     robot.turn(-90)
