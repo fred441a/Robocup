@@ -5,9 +5,9 @@ def stop_på_midten(robot, line_sensor, ultra_sensor, threshold):
         robot.straight(250)
         Kør_Lige_ud_midten(robot, line_sensor,threshold,-3, ultra_sensor)
         robot.reset()
-        robot.straight(-1700)
+        robot.straight(-1800)
         robot.turn(-90)
-        robot.straight(300)
+        robot.straight(280)
 
 
     
