@@ -52,6 +52,7 @@ WHITE = None
         
 def FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor):
         FørsteSegment(robot,line_sensor,threshold,BLACK)
+        Kør_Lige_ud(robot,line_sensor,threshold,-4)
         ev3.speaker.say("Done with first segment")
         AndetSegment(robot,Arm_Motor,ultra_sensor,line_sensor,threshold)
         ev3.speaker.say("Done with second segment")
