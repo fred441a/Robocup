@@ -84,7 +84,7 @@ def Kør_Lige_ud_midten(DriveBase,line_sensor,threshold, PROPORTIONAL_GAIN, ultr
         DriveBase.drive(DRIVE_SPEED, turn_rate)
 
         # You can wait for a short time or do other things in this loop.
-        if ultra_sensor.distance() < 160:
+        if ultra_sensor.distance() < 175:
             DriveBase.stop()
             break
         wait(10)
