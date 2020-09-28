@@ -14,7 +14,7 @@ from Trekant import SyvendeSegment
 from RundtomFlaske import Rundt_Om_Flaske, SjetteSegment, OttendeSegment
 from Stoppåmidten import stop_på_midten
 from FireGrå import FireGrå
-from vippe import TredjeSegment, TredjeSegment_alt
+from vippe import TredjeSegment_alt
 from HenteFlaske import AndetSegment , løfte_flaske
 from Målskive import FemteSegment
 
@@ -51,6 +51,8 @@ WHITE = None
 
         
 def FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor):
+        if Arm_Motor.angle() > 0:
+                Arm_Motor.run_target(-300,0)
         FørsteSegment(robot,line_sensor,threshold,BLACK)
         Kør_Lige_ud(robot,line_sensor,threshold,-4)
         ev3.speaker.say("Done with first segment")
@@ -67,7 +69,7 @@ def FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor):
         ev3.speaker.say("done with seventh segment")
         OttendeSegment(robot,line_sensor,threshold,BLACK)
         ev3.speaker.say("done with eight segment")
-        stop_på_midten(robot, ultra_sensor)
+        stop_på_midten(robot, line_sensor, ultra_sensor, BLACK)
 
 
 # Start following the line endlessly.

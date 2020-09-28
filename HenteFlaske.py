@@ -28,7 +28,7 @@ def Kør_indtil_sort(drivebase,line_sensor):
     while True:
         drivebase.drive(200,0)
         if line_sensor.reflection() < 15:
-            drivebase.straight(60)
+            drivebase.straight(80)
             drivebase.stop()
             break
         wait(5)
