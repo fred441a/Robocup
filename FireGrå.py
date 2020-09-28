@@ -7,14 +7,14 @@ def SerIkkeGrå1(robot, sensor, grey, white, ev3):
     robot.turn(-10)
 
     if(sensor.reflection() > grey):
-        robot.straight(190)
+        robot.straight(150)
         print("HAR FUNDET HVID")
 
         if(sensor.reflection() > grey):
             robot.straight(365)
             robot.turn(45)
             print("Den turner anden gang")
-            Kør_Lige_ud(robot,sensor,threshold,-4)
+            Kør_Lige_ud(robot,sensor,threshold,-2)
 
 
 
@@ -23,15 +23,14 @@ def FireGrå(robot, sensor, grey, white,ev3):
     robot.straight(500)
     robot.turn(-45)
     print("TURNER 1. GANG")
-    robot.straight(340)
 
     while (sensor.reflection() > grey):
-        robot.drive(150,0)
+        robot.drive(100,0)
         print("SER HVID, ALT ER GODT")
 
-    robot.turn(30)
+    robot.turn(45)
     print("TURNER 2. GANG")
-    Kør_Lige_ud(robot,sensor,threshold,-4)
+    Kør_Lige_ud(robot,sensor,threshold,-2)
         
             
 
