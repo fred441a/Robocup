@@ -49,7 +49,6 @@ WHITE = None
 
         
 def FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor):
-        Arm_Motor.run_target(300,-1500)
         FørsteSegment(robot,line_sensor,threshold,BLACK)
         Kør_Lige_ud(robot,line_sensor,threshold,-3)
         ev3.speaker.say("Done with first segment")

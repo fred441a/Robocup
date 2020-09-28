@@ -18,7 +18,7 @@ from Ligeud import Kør_Lige_ud
 
 
 
-def FireGrå(drivebase,ultra_sensor,line_sensor,threshold):
+def FireGrå(drivebase,ultra_sensor,line_sensor,BLACK, WHITE):
     robot.straight(500)
     robot.turn(-45)
     robot.straight(400)
