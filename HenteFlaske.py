@@ -4,7 +4,7 @@ from pybricks.tools import wait
 
 def dreje_mod_flaske(drivebase):
     drivebase.straight(250)
-    drivebase.turn(90)
+    drivebase.turn(95)
 
 #den kører frem og får flasken ind i grebet. Vi har målt at der er 8 cm fra sensor til flasken
 def Kør_hen_til_flaske(drivebase,ultra_sensor):
