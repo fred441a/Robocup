@@ -45,14 +45,12 @@ WHITE = None
 
 #Løser det første segment hvor robotten skal skifte linje 2 gange
 
-
-
 # Start following the line endlessly.
 
         
 def FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor):
         FørsteSegment(robot,line_sensor,threshold,BLACK)
-        Kør_Lige_ud(robot,line_sensor,threshold,-5s)
+        Kør_Lige_ud(robot,line_sensor,threshold,-3)
         ev3.speaker.say("Done with first segment")
         AndetSegment(robot,Arm_Motor,ultra_sensor,line_sensor,threshold)
         ev3.speaker.say("Done with second segment")

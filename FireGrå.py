@@ -18,18 +18,12 @@ from Ligeud import Kør_Lige_ud
 
 
 
-def FireGrå(robot, sensor, grey, white,ev3):
-    threshold = (grey+white)/2
+def FireGrå(drivebase,ultra_sensor,line_sensor,threshold):
     robot.straight(500)
     robot.turn(-45)
-    robot.straight(300)
+    robot.straight(400)
     print("TURNER 1. GANG")
     robot.turn(30)
-
-    while sensor.reflection() > grey:
-        print(sensor.reflection())
-        drivebase.drive(200,0)
-        print("SER HVID, ALT ER GODT")
     Kør_Lige_ud(robot,sensor,threshold,-2)
         
             

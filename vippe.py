@@ -13,7 +13,8 @@ def TredjeSegment_alt(drivebase,line_sensor,threshold,hvid,grå):
     Kør_Lige_ud(drivebase,line_sensor,threshold,-2)
     drivebase.straight(400)
     Kør_Lige_ud_Ind_TIL(drivebase,line_sensor,threshold,-2,10000)
-    drivebase.straight(1100)
+    drivebase.straight(1000)
+    drivebase.turn(-85)
     Kør_Lige_ud(drivebase,line_sensor,threshold,-2)
 
 #    if line_sensor.reflection() >= hvid:
