@@ -14,8 +14,9 @@ from Trekant import SyvendeSegment
 from RundtomFlaske import Rundt_Om_Flaske, SjetteSegment, OttendeSegment
 from Stoppåmidten import stop_på_midten
 from FireGrå import FireGrå
-from vippe import TredjeSegment
+from vippe import TredjeSegment, TredjeSegment_alt
 from HenteFlaske import AndetSegment , løfte_flaske
+from Målskive import FemteSegment
 
 
 
@@ -54,10 +55,10 @@ def FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor):
         ev3.speaker.say("Done with first segment")
         AndetSegment(robot,Arm_Motor,ultra_sensor,line_sensor,threshold)
         ev3.speaker.say("Done with second segment")
-        TredjeSegment(robot,line_sensor,threshold)
+        TredjeSegment_alt(robot,line_sensor,threshold,BLACK,WHITE)
         FireGrå(robot,line_sensor,BLACK,WHITE,ev3)
         ev3.speaker.say("Done with four grey")
-        Kør_Lige_ud(robot,line_sensor,threshold,-2)
+        FemteSegment(robot,line_sensor,ultra_sensor, threshold,BLACK,Arm_Motor, ev3)
         SjetteSegment(robot,line_sensor,threshold,BLACK)
         ev3.speaker.say("done with six segment")
         SyvendeSegment(robot,ultra_sensor)
@@ -79,6 +80,5 @@ while True:
         ev3.speaker.beep()
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
-        AndetSegment(robot,Arm_Motor,ultra_sensor,line_sensor,threshold)
-        TredjeSegment(robot,line_sensor,threshold)
+        FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor)
         break

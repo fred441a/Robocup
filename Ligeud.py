@@ -34,7 +34,7 @@ def Kør_Lige_ud(DriveBase,line_sensor,threshold, PROPORTIONAL_GAIN):
 def Kør_Lige_ud_Ind_TIL(DriveBase,line_sensor,threshold, PROPORTIONAL_GAIN,tid):
     timer = StopWatch()
         # Set the drive speed at 200 millimeters per second.
-    DRIVE_SPEED = 200
+    DRIVE_SPEED = 100
 
     # Set the gain of the proportional line controller. This means that for every
     # percentage point of light deviating from the threshold, we set the turn
@@ -42,8 +42,6 @@ def Kør_Lige_ud_Ind_TIL(DriveBase,line_sensor,threshold, PROPORTIONAL_GAIN,tid)
 
     # For example, if the light value deviates from the threshold by 10, the robot
     # steers at 10*1.2 = 12 degrees per second.
-    print("tid")
-    print(timer.time())
     timer.reset()
     timer.resume()
     while True:
@@ -58,7 +56,6 @@ def Kør_Lige_ud_Ind_TIL(DriveBase,line_sensor,threshold, PROPORTIONAL_GAIN,tid)
 
         # You can wait for a short time or do other things in this loop.
         if timer.time() >= tid:
-            print(timer.time())
             DriveBase.stop()
             break
         wait(10)

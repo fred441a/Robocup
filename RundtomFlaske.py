@@ -4,7 +4,7 @@ def Rundt_Om_Flaske(robot,sensor,grey):
     robot.turn(45)
     robot.straight(800)
     robot.turn(-90)
-    robot.straight(500)
+    robot.straight(400)
     print(grey)
     while sensor.reflection() > grey:
         print(sensor.reflection())
