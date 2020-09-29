@@ -1,4 +1,5 @@
 from pybricks.tools import wait
+from Ligeud import Kør_Lige_ud_Ind_TIL_Langsomt
 
 # first turn
 def indtil_hurdle(DriveBase):
@@ -36,6 +37,7 @@ def ret_ind(robot):
     robot.straight(400)
         
 def SyvendeSegment(robot, ultra_sensor):
+    Kør_Lige_ud_Ind_TIL_Langsomt(DriveBase,line_sensor,threshold, -1,2000):
     indtil_hurdle(robot)
     første_væg(robot,ultra_sensor)
     ret_ind(robot)
