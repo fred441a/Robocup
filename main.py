@@ -8,7 +8,7 @@ from pybricks.hubs import EV3Brick
 from pybricks.parameters import Button, Direction
 
 #Vores Libraries
-from Ligeud import Kør_Lige_ud
+from Ligeud import Kør_Lige_ud,Kør_Lige_ud_Ind_TIL_Langsomt
 from SkiftBane import FørsteSegment
 from Trekant import SyvendeSegment
 from RundtomFlaske import Rundt_Om_Flaske, SjetteSegment, OttendeSegment
@@ -49,7 +49,6 @@ WHITE = None
 
         
 def FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor):
-
         #FørsteSegment(robot,line_sensor,threshold,BLACK)
         #Kør_Lige_ud(robot,line_sensor,threshold,-3)
         #ev3.speaker.say("Done with first segment")
@@ -59,13 +58,13 @@ def FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor):
         #FireGrå(robot,line_sensor,BLACK,WHITE,ev3)
         #ev3.speaker.say("Done with four grey")
         #FemteSegment(robot,line_sensor,ultra_sensor, threshold,BLACK,Arm_Motor, ev3)
-        #SjetteSegment(robot,line_sensor,threshold,BLACK)
-        #ev3.speaker.say("done with six segment")
-        #SyvendeSegment(robot,ultra_sensor)
-        #Kør_Lige_ud(robot,line_sensor,threshold,-2)
-        #ev3.speaker.say("done with seventh segment")
-        #OttendeSegment(robot,line_sensor,threshold,BLACK)
-        #ev3.speaker.say("done with eight segment")
+        SjetteSegment(robot,line_sensor,threshold,BLACK)
+        ev3.speaker.say("done with six segment")
+        SyvendeSegment(robot,ultra_sensor)
+        Kør_Lige_ud(robot,line_sensor,threshold,-2)
+        ev3.speaker.say("done with seventh segment")
+        OttendeSegment(robot,line_sensor,threshold,BLACK)
+        ev3.speaker.say("done with eight segment")
         stop_på_midten(robot, line_sensor, ultra_sensor, BLACK)
 
 
@@ -81,7 +80,6 @@ while True:
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
         FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor)
-        
         #AndetSegment(robot,Arm_Motor,ultra_sensor,line_sensor,threshold)
         #TredjeSegment(robot,line_sensor,threshold)
         #stop_på_midten(robot, line_sensor, ultra_sensor, threshold)
