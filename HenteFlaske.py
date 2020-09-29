@@ -44,7 +44,7 @@ def AndetSegment(drivebase,Arm_Motor,ultra_sensor,line_sensor,threshold):
     løfte_flaske(Arm_Motor,True)
     drivebase.straight(-drivebase.distance())
     drivebase.turn(-90)
-    Kør_Lige_ud(drivebase,line_sensor,threshold,1)
+    Kør_Lige_ud(drivebase,line_sensor,threshold,-3)
 
 
 
