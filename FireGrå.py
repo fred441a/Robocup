@@ -23,12 +23,12 @@ def FireGrå(robot, sensor, grey, white,ev3):
     robot.straight(500)
     robot.turn(-45)
     print("TURNER 1. GANG")
-    robot.straight(340)
+    robot.straight(290)
 
     while (sensor.reflection() > grey):
         robot.drive(150,0)
         print("SER HVID, ALT ER GODT")
-
+    robot.stop()
     robot.turn(30)
     print("TURNER 2. GANG")
     Kør_Lige_ud(robot,sensor,threshold,-4)

@@ -3,7 +3,7 @@ from Ligeud import Kør_Lige_ud
 from pybricks.tools import wait
 
 def dreje_mod_flaske(drivebase):
-    drivebase.straight(250)
+    drivebase.straight(240)
     drivebase.turn(90)
 
 #den kører frem og får flasken ind i grebet. Vi har målt at der er 8 cm fra sensor til flasken
@@ -14,7 +14,7 @@ def Kør_hen_til_flaske(drivebase,ultra_sensor):
             print("afstand fundet")
             break
         else:
-            drivebase.drive(200,0)
+            drivebase.drive(100,0)
 
 #set openclose til tru hvis den skal åbne og false hvis den skal lukke
 def løfte_flaske(Arm_Motor, openclose):
