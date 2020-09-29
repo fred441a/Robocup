@@ -10,7 +10,7 @@ def FemteSegment(drivebase,line_sensor,ultra_sensor, threshold,grå,Arm_motor, e
     løfte_flaske(Arm_motor,False)
     drivebase.straight(-drivebase.distance())
     drivebase.turn(90)
-    Kør_Lige_ud(drivebase,line_sensor,threshold,2)
+    Kør_Lige_ud(drivebase,line_sensor,threshold,-2)
 
 
 def tæl_streger(line_sensor,drivebase,grå,Arm_motor,ev3):

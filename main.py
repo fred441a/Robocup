@@ -33,7 +33,7 @@ ultra_sensor =  UltrasonicSensor(Port.S2)
 
 # Initialize the drive base.
 robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=191)
-robot.settings(200,310,46,186)
+robot.settings(150,310,46,186)
 
 #Initialize the ev3 block
 ev3 = EV3Brick()

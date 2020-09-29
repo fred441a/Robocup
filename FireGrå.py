@@ -1,4 +1,5 @@
 from Ligeud import Kør_Lige_ud
+from pybricks.tools import wait
 
 def SerIkkeGrå1(robot, sensor, grey, white, ev3):
     print("SER GRÅ, LEDER EFTER HVID")
@@ -25,10 +26,10 @@ def FireGrå(robot, sensor, grey, white,ev3):
     print("TURNER 1. GANG")
     robot.straight(290)
 
-    while (sensor.reflection() > grey):
-        robot.drive(150,0)
+    while (sensor.reflection() <= grey):
+        robot.straight(5,0)
+        wait(10)
         print("SER HVID, ALT ER GODT")
-    robot.stop()
     robot.turn(30)
     print("TURNER 2. GANG")
     Kør_Lige_ud(robot,sensor,threshold,-4)
