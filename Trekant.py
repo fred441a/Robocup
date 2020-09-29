@@ -36,8 +36,8 @@ def væk_igen(robot,længde):
 def ret_ind(robot):
     robot.straight(400)
         
-def SyvendeSegment(robot, ultra_sensor):
-    Kør_Lige_ud_Ind_TIL_Langsomt(DriveBase,line_sensor,threshold, -1,2000):
+def SyvendeSegment(robot, ultra_sensor,threshold,line_sensor):
+    Kør_Lige_ud_Ind_TIL_Langsomt(DriveBase,line_sensor,threshold, -1,2000)
     indtil_hurdle(robot)
     første_væg(robot,ultra_sensor)
     ret_ind(robot)
