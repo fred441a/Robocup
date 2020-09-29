@@ -60,7 +60,7 @@ def FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor):
         #FemteSegment(robot,line_sensor,ultra_sensor, threshold,BLACK,Arm_Motor, ev3)
         SjetteSegment(robot,line_sensor,threshold,BLACK)
         ev3.speaker.say("done with six segment")
-        SyvendeSegment(robot,ultra_sensor)
+        SyvendeSegment(robot,ultra_sensor,line_sensor,threshold)
         Kør_Lige_ud(robot,line_sensor,threshold,-2)
         ev3.speaker.say("done with seventh segment")
         OttendeSegment(robot,line_sensor,threshold,BLACK)
