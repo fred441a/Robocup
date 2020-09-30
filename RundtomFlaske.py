@@ -14,7 +14,7 @@ def Rundt_Om_Flaske(robot,sensor,grey):
 
 def Rundt_Om_Flaske2(robot,sensor,grey):
     robot.turn(-45)
-    robot.straight(600)
+    robot.straight(800)
     robot.turn(80)
     robot.straight(250)
     print(grey)

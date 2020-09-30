@@ -24,7 +24,7 @@ def FireGrå(robot, sensor, grey, white,ev3):
     robot.straight(500)
     robot.turn(-45)
     print("TURNER 1. GANG")
-    robot.straight(290)
+    robot.straight(280)
 
     while (sensor.reflection() <= grey):
         robot.straight(5,0)

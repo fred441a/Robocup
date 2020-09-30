@@ -3,7 +3,7 @@ from Ligeud import Kør_Lige_ud_Ind_TIL_Langsomt
 
 # first turn
 def indtil_hurdle(DriveBase):
-    DriveBase.straight(750)
+    DriveBase.straight(700)
     DriveBase.turn(-45)
     DriveBase.stop()
 
