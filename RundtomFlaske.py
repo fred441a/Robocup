@@ -30,4 +30,4 @@ def SjetteSegment(robot,line_sensor,threshold,BLACK):
 
 def OttendeSegment(robot,line_sensor,threshold,BLACK):
     Rundt_Om_Flaske2(robot,line_sensor,BLACK)
-    Kør_Lige_ud(robot,line_sensor,threshold,4)
+    Kør_Lige_ud(robot,line_sensor,threshold,5)
