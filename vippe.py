@@ -8,7 +8,7 @@ from Ligeud import Kør_Lige_ud, Kør_Lige_ud_Ind_TIL
     #Kør_Lige_ud(drivebase,line_sensor,threshold,2)
 
 def TredjeSegment_alt(drivebase,line_sensor,threshold,hvid,grå):
-    drivebase.straight(250)
+    drivebase.straight(245)
     drivebase.turn(-85)
     Kør_Lige_ud(drivebase,line_sensor,threshold,-2)
     drivebase.straight(400)

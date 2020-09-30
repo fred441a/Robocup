@@ -81,8 +81,4 @@ while True:
     if BLACK != None and WHITE != None:
         threshold = (BLACK + WHITE) / 2
         FinalFunction(robot,line_sensor,threshold,BLACK,WHITE,ultra_sensor)
-        #AndetSegment(robot,Arm_Motor,ultra_sensor,line_sensor,threshold)
-        #TredjeSegment(robot,line_sensor,threshold)
-        #stop_på_midten(robot, line_sensor, ultra_sensor, threshold)
-        #FireGrå(robot,line_sensor,BLACK,WHITE,ev3)
         break

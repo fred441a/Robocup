@@ -29,7 +29,7 @@ def væk_igen(robot,længde):
     # Wait until an obstacle is detected. This is done by repeatedly
     # doing nothing (waiting for 5 milliseconds) while the measured
     # distance is still greater than 300 mm.
-    robot.straight(længde)
+    robot.straight(længde+30)
     # Turn right by 90 degrees
     robot.turn(-45)
 
